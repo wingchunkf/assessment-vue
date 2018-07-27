@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles2.css" />
+
+
+</head>
+
+<body>
+
+
+    <div class="container" id="app">
+        <div class="widget">
+
+
+            <div class="row info ">
+                <div class="col-12 widget-header">
+                    <p>Contacts</p>
+                </div>
+            </div>
+
+            <div class="row info first-contact">
+                <div class="col-4 contact1">
+                    <p>
+                        <i class="fas fa-circle green"></i>Christian</p>
+                </div>
+
+        
+                <div class="col-8 email-phone">
+                    <!-- <div class="modal1">
+                        <p>hi</p>
+                        <p>hi</p>
+                        <p>hi</p>
+                    </div> -->
+                
+                    <p>{{ contactOne }}</p>
+                </div>
+            </div>
+
+
+            <div class="row ">
+                <div class="col-4">
+                    <p>
+                        <i class="fas fa-circle green"></i>Rich</p>
+                </div>
+                <div class="col-8">
+                    <p>{{ contactTwo }}</p>
+                </div>
+            </div>
+
+            <div class="row info">
+                <div class="col-4">
+                    <p>
+                        <i class="fas fa-circle green"></i>Scott</p>
+                </div>
+                <div class="col-8">
+                    <p>{{ contactThree }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <p>
+                        <i class="fas fa-circle green"></i>Danny</p>
+                </div>
+                <div class="col-8">
+                    <p>{{ contactFour }}</p>
+                </div>
+            </div>
+
+            <div class="row info">
+                <div class="col-4">
+                    <p>
+                        <i class="fas fa-circle red"></i>Taka</p>
+                </div>
+                <div class="col-8">
+                    <p>{{ contactFive }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <span class="dot"></span>
+                    <p>
+                        <i class="fas fa-circle yellow"></i>Tim</p>
+                </div>
+                <div class="col-8">
+                    <p>{{ contactSix }}</p>
+                </div>
+            </div>
+
+            <div class="row info">
+                <div class="col-4">
+                    <p>
+                        <i class="fas fa-circle green"></i>Patrick</p>
+                </div>
+                <div class="col-8">
+                    <p>{{ contactSeven }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <p>
+                        <i class="fas fa-circle yellow"></i>Jacques</p>
+                </div>
+                <div class="col-8">
+                    <p>{{ contactEight }}</p>
+                </div>
+            </div>
+
+            <div class="col-7 empty-div"></div>
+
+            <div class="col-5 info-selector-div">
+                <div class="info-box">
+                    <p class="info-selector-text">{{ infoType }}</p>
+                    <div class="col-2 arrows">
+                        <i @click="resetInfo" class="fas fa-caret-up up-arrow"></i>
+                        <i @click="insertNumber" class="fas fa-caret-down down-arrow"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        function initialState() {
+            return {
+                message: 'Hello Vue!',
+                contactOne: "christine@aol.com",
+                contactTwo: "rich@tripod.com",
+                contactThree: "scott@malinator.com",
+                contactFour: "danny@hotmail.com",
+                contactFive: "taka@myspace.com",
+                contactSix: "tim@netscape.com",
+                contactSeven: "patrick@live.com",
+                contactEight: "jacques@aol.com",
+                infoType: "Email address"
+            }
+        }
+
+        var app = new Vue({
+            el: '#app',
+            data:        
+        
+            function () {
+             
+                return initialState();
+            
+        
+                
+                          
+            }, 
+         
+           
+            methods: {
+                insertNumber: function () {
+                    this.contactOne = "509-280-2841";
+                    this.contactTwo = "509-280-2845";
+                    this.contactThree = "509-480-3649";
+                    this.contactFour = "509-480-2889";
+                    this.contactFive = "509-480-2449";
+                    this.contactSix = "509-480-8889";
+                    this.contactSeven = "509-487-4658";
+                    this.contactEight = "509-480-5501";
+                    this.infoType = "Phone number";
+
+                },
+                resetInfo: function () {
+                    Object.assign(this.$data, this.$options.data());
+                }
+            }
+        })
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
